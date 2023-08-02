@@ -1,0 +1,15 @@
+It works!
+
+You can open multiple tabs and type in any of them and everything gets
+synced.
+
+This even extends to formatting that isn't provided in the bar at the
+top of each box. I used editor.formatText() to color some text and it
+was quickly visible on the other tab.
+
+However, there are a large number of errors in the backend. I'm not
+sure why, it seems like the UDS sockets periodically reject
+connections, among other things. I've added one HANDLER-CASE already,
+and the websocket produces a lot.
+
+There are various bugs

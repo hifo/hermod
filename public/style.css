@@ -1,0 +1,23 @@
+body {
+    color: white;
+    background: black;
+}
+
+a {
+    color: #99f;
+}
+
+button, input[type="button"] {
+    color: white;
+    background-color: black;
+}
+
+h1 {
+    text-align: center;
+}
+
+div.message {
+    max-width: 800px;
+    margin: 10px;
+}
+
