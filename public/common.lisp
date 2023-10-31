@@ -3,7 +3,7 @@
 		      eric
 		      sqlite)))
 
-(defpackage :wave-common
+(defpackage :hermod-common
   (:use :cl)
   (:export :*sql*
 	   :*conf*
@@ -15,11 +15,11 @@
 	   :user-name
 	   :url-bool))
 
-(in-package :wave-common)
+(in-package :hermod-common)
 
-(defvar *db* "/var/local/eric/wave/conf.sxp")
+(defvar *db* "/var/local/eric/hermod/conf.sxp")
 
-(defparameter *sql* (sqlite:connect "/var/local/eric/wave/db.sqlite"))
+(defparameter *sql* (sqlite:connect "/var/local/eric/hermod/db.sqlite"))
 
 (defun parse-select-col-select (col)
   (typecase col

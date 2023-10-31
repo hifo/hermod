@@ -2,9 +2,9 @@
 
 cd ws/
 HERE=`pwd`
-for f in wave.lisp common.lisp; do
+for f in hermod.lisp common.lisp; do
     (
-	cd /var/www/html/ws/wave;
+	cd /var/www/html/ws/hermod;
 	ln -s "$HERE/$f" "$f"
     )
 done

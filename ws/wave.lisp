@@ -11,14 +11,14 @@
 		      quri
 		      rutils
 		      sqlite))
-  (load "/home/eric/projects/wave/ws/common.lisp"))
+  (load "/home/eric/projects/hermod/ws/common.lisp"))
 
-(defpackage :wave-ws
-  (:use :cl :wave-common))
+(defpackage :hermod-ws
+  (:use :cl :hermod-common))
 
-(in-package :wave-ws)
+(in-package :hermod-ws)
 
-(defparameter *root* "/var/local/eric/wave")
+(defparameter *root* "/var/local/eric/hermod")
 
 (defun update (client client-id)
   (close client)

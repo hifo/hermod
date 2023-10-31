@@ -14,10 +14,10 @@
 		      sqlite))
   (load "common.lisp"))
 
-(defpackage :wave-api
-  (:use :cl :wave-common))
+(defpackage :hermod-api
+  (:use :cl :hermod-common))
 
-(in-package :wave-api)
+(in-package :hermod-api)
 
 (defun test-action ()
   (format t "Status: 200 OK~%")
@@ -31,7 +31,7 @@
     (format t "~a~%" (jonathan:to-json `(:|success| t :|posts| ,posts)))))
 
 (defun send-client-updates (client-id)
-  (dolist (filename (cl-fad:list-directory "/var/local/eric/wave/listeners/"))
+  (dolist (filename (cl-fad:list-directory "/var/local/eric/hermod/listeners/"))
     (handler-case
 	(iolib:with-open-socket (sock :address-family :local :type :stream :connect :active
 				      :remote-filename (namestring filename))

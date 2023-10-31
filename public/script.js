@@ -161,7 +161,7 @@ function ws_close(e) {
 }
 
 function connect() {
-    const uri = new URL("/ws/wave/wave.lisp", location);
+    const uri = new URL("/ws/hermod/hermod.lisp", location);
     if (location.protocol == "https:") {
 	uri.protocol = "wss:";
     } else {
