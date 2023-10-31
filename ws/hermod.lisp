@@ -28,6 +28,12 @@
   (format client "Unknown command ~a~%" command)
   (close client))
 
+(defun safe-rm (filename)
+  (handler-case (sb-posix:unlink filename)
+    (sb-posix:syscall-error (c)
+      (unless (= 2 (sb-posix:syscall-errno c))
+	(error c)))))
+
 (defun main-loop ()
   (let ((filename (format nil "~a/listeners/~a.uds" *root* (sb-unix:unix-getpid))))
     (unwind-protect
@@ -42,7 +48,7 @@
 		    (update (update client (getf (rest msg) :client-id)))
 		    (quit (close client) (return))
 		    (otherwise (unknown client command)))))))
-      (sb-posix:unlink filename))))
+      (safe-rm filename))))
 
 (defun main ()
   (format t "READY~%")
